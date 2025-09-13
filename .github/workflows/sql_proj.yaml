@@ -24,4 +24,4 @@ jobs:
       with:
         connection-string: ${{ secrets.SQL_CONNECTION_STRING }}
         action: 'publish'
-        path: 'bin/Debug/mssqlproj.sqlproj'
+        path: 'bin/Debug/mssqlproj.dacpac'
