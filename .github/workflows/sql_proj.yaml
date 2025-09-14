@@ -21,7 +21,10 @@ jobs:
 
     - name: Install
       run: dotnet tool install -g Microsoft.SqlPackage 
-     
+
+    - name: two
+      run: dotnet new install Microsoft.Build.Sql.Templates
+      
     - name: Deploy
       run: /sqlpackage /Action:Publish /SourceFile:bin/Debug/mssqlproj.dacpac /TargetConnectionString:'Server=tcp:testserverdevops.database.windows.net;Initial Catalog=sqldevops;User ID=djamel;Password=Abcd+1234' /p:AllowIncompatiblePlatform=true;      #uses: azure/sql-action@v2.3
       #with:
