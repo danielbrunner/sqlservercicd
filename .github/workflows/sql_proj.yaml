@@ -25,4 +25,4 @@ jobs:
         connection-string: ${{ secrets.SQL_CONNECTION_STRING }}
         action: 'publish'
         path: 'bin/Debug/mssqlproj.dacpac'
-        arguments: '/p:DropObjectsNotInSource=true'
+        arguments: '/p:AllowIncompatiblePlatform=true'
