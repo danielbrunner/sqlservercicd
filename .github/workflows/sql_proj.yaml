@@ -20,6 +20,7 @@ jobs:
       run: dotnet build mssqlproj.sqlproj
       
     - name: Deploy
+      run: dotnet tool install -g Microsoft.SqlPackage
       run: /sqlpackage /Action:Publish /SourceFile:bin/Debug/mssqlproj.dacpac /TargetConnectionString:'Server=tcp:testserverdevops.database.windows.net;Initial Catalog=sqldevops;User ID=djamel;Password=Abcd+1234' /p:AllowIncompatiblePlatform=true;      #uses: azure/sql-action@v2.3
       #with:
         #connection-string: ${{ secrets.SQL_CONNECTION_STRING }}
