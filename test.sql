@@ -1,10 +1,29 @@
-CREATE TABLE [dbo].[Product](
-	[ProductID] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	[Name] [nvarchar](100) NOT NULL ,
-	deltaLine int ,
-	newnewval nvarchar(100) ,
-	newvscol nvarchar(20)
-)
+-- select * from dbo.test
+
+/*alter procedure dbo.sp_testing
+ @a nvarchar(10) out
+as
+    set @a='abc'
 
 
-execute sp_configure;
+declare @a nvarchar(10)
+exec dbo.sp_testing @a output*/
+
+--execute dbo.sp_testing 
+
+
+
+alter procedure dbo.sp_new
+AS
+
+    declare @a nvarchar(10)
+    exec dbo.sp_testing @a output
+
+
+    -- Assert: Verify the result
+    EXEC tSQLt.AssertEquals 'abc', @a;
+
+execute dbo.sp_new;
+
+
+
