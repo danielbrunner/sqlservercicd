@@ -1,5 +1,6 @@
 name: sqlproj-sample
 
+
 on:
   push:
     branches: [ "main" ]
